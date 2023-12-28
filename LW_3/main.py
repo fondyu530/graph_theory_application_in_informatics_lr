@@ -2,7 +2,7 @@ from graph_tools import (Graph, read_adjacency_matrix_from_file, find_chords,
                          find_bridges, find_hinges, graph_is_connected)
 
 
-for file_num in range(6, 8):
+for file_num in [1, 2]:
     graph_file_path = f"graphs/graph_{file_num}.txt"
     matrix = read_adjacency_matrix_from_file(graph_file_path)
     graph = Graph()
@@ -12,6 +12,8 @@ for file_num in range(6, 8):
     chords = skeleton = None
     if graph_is_connected(graph_obj=graph):
         skeleton, chords = find_chords(graph_obj=graph)
+        skeleton = [el[0] for el in skeleton]
+        chords = [el[0] for el in chords]
     print(f"Граф N = {file_num}")
     print(f"Мосты: {found_bridges}")
     print(f"Шарниры: {found_hinges}")
