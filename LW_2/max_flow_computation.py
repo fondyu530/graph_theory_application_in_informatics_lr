@@ -38,8 +38,8 @@ def define_max_flow(graph_obj: Graph, start_vertex, end_vertex):
     return sum(flows_list)
 
 
-for file_num in [6, 7]:
-    graph_file_path = f"graphs/graph_{file_num}.txt"
+for file_num in [1, 2]:
+    graph_file_path = f"graphs_flow/graph_{file_num}.txt"
     matrix = read_adjacency_matrix_from_file(graph_file_path)
     graph = Graph()
     graph.load_graph_from_adjacency_matrix(matrix)

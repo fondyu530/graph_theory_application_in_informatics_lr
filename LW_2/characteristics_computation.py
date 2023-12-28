@@ -2,7 +2,7 @@ from graph_tools import Graph, read_adjacency_matrix_from_file
 
 
 for file_num in range(1, 6):
-    graph_file_path = f"graphs/graph_{file_num}.txt"
+    graph_file_path = f"graphs_characteristics/graph_{file_num}.txt"
     matrix = read_adjacency_matrix_from_file(graph_file_path)
     graph = Graph()
     graph.load_graph_from_adjacency_matrix(matrix)
