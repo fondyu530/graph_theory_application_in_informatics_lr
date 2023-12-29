@@ -91,6 +91,7 @@ def read_adjacency_matrix_from_file(path: str) -> np.array:
 
 
 def graph_is_connected(graph_obj, start_vertex=1, visited=None) -> bool:
+    # dfs O(N + E)
     if visited is None:
         visited = set()
     visited.add(start_vertex)
@@ -100,6 +101,7 @@ def graph_is_connected(graph_obj, start_vertex=1, visited=None) -> bool:
 
 
 def find_bridges(graph_obj: Graph):
+    # O(N + E)
     visited = [False] * graph_obj.order
     ret, enter = [0] * graph_obj.order, [0] * graph_obj.order
     timer = 0
@@ -124,6 +126,7 @@ def find_bridges(graph_obj: Graph):
 
 
 def find_hinges(graph_obj: Graph):
+    # O(N + E)
     visited = [False] * graph_obj.order
     ret, enter = [0] * graph_obj.order, [0] * graph_obj.order
     timer = 0
@@ -152,6 +155,7 @@ def find_hinges(graph_obj: Graph):
 
 
 def find_chords(graph_obj: Graph):
+    # Prima algorithm O(E * logN)
     vertices = {1}
     edges_set = graph_obj.edges_set
     edges_set.add(((-1, -1), np.inf))

@@ -50,7 +50,7 @@ class Graph:
 
     @staticmethod
     def define_distance_matrix(adjacency_matrix: np.array) -> np.array:
-        # floyd-warshall algorithm
+        # Floyd-Warshall algorithm O(n^3)
         vertices_num = adjacency_matrix.shape[0]
         distance_matrix = adjacency_matrix.astype(float)
         distance_matrix[distance_matrix == 0] = np.inf

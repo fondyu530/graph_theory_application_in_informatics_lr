@@ -3,6 +3,7 @@ from graph_tools import Graph, read_adjacency_matrix_from_file
 
 
 def define_max_flow(graph_obj: Graph, start_vertex, end_vertex):
+    # Ford-Fulkerson O(max_f * |E|)
     residual_adjacency_matrix = graph_obj.adjacency_matrix.copy()
     flows_list = []
     while True:
